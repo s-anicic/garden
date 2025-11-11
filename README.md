@@ -15,13 +15,11 @@
 
 ---
 
-## 🖥️ Technologies Used
-
-* **Next.js** – React framework for server-side rendering and modern web development.
-* **TypeScript** – Strong typing for safer, scalable code.
-* **Tailwind CSS** – Utility-first CSS framework for fast and responsive styling.
-* **Lucide-React** – Icons for UI elements (flowers, plus button, etc.).
-* **React Context API** – State management for prayers.
+## 🛠️ Tech Stack
+⚡ Framework: Next.js  
+💻 Frontend: React, TypeScript  
+🎨 Styling: Tailwind CSS, Google Fonts  
+🧩 Version Control: GitHub  
 
 ---
 
@@ -49,14 +47,6 @@ app/
 * `faq/page.tsx` – Frequently Asked Questions page for guidance and app info.  
 * `components/` – Reusable UI components including Header, Footer, PrayerCard, PrayerForm, and PrayerGarden.  
 * `context/PrayerContext.tsx` – Manages global state for prayers, providing functions to add, update, and delete prayers throughout the app.
-
----
-
-## 🛠️ Tech Stack
-⚡ Framework: Next.js  
-💻 Frontend: React, TypeScript  
-🎨 Styling: Tailwind CSS, Google Fonts  
-🧩 Version Control: GitHub  
 
 ---
 
