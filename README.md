@@ -4,6 +4,16 @@
 
 ---
 
+## 📸 Preview
+
+<img src="https://github.com/user-attachments/assets/a8a02055-bbc6-460e-bad7-d7302be801d8" alt="Home Page"/>
+<p align="center"><em>The home page</em></p>
+
+<img src="https://github.com/user-attachments/assets/4700b251-a388-435b-abfe-7d41d014531a" alt="The Prayer Garden"/>
+<p align="center"><em>The prayer garden</em></p>
+
+---
+
 ## 🛠️ Features
 
 * **Add New Prayers** – Plant a new prayer in your garden with a title, category, and content.
@@ -16,6 +26,7 @@
 ---
 
 ## 🛠️ Tech Stack
+
 ⚡ Framework: Next.js  
 💻 Frontend: React, TypeScript  
 🎨 Styling: Tailwind CSS, Google Fonts  
