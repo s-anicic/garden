@@ -40,6 +40,7 @@ app/
 ├── prayer-garden/    # Page displaying answered prayers as a garden
 │   └── page.tsx
 └── page.tsx          # Main homepage with prayer form and ongoing prayers
+```
 
 ---
 
