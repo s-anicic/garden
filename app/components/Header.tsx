@@ -12,7 +12,7 @@ export default function Header() {
   const pathname = usePathname();
 
   const navLinks = [
-    { href: "/", label: "Add Prayer" },
+    { href: "/", label: "Home" },
     { href: "/prayer-garden", label: "Prayer Garden" },
   ];
 
