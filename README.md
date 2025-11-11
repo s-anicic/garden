@@ -27,26 +27,19 @@
 
 ```
 app/
-├─ components/
-│  ├─ Header.tsx
-│  ├─ Footer.tsx
-│  ├─ PrayerForm.tsx
-│  ├─ PrayerCard.tsx
-│  ├─ PrayerGarden.tsx
-├─ context/
-│  └─ PrayerContext.tsx
-├─ faq/
-│  └─ page.tsx
-├─ prayer-garden/
-│  └─ page.tsx
-└─ page.tsx
-```
-
-* `page.tsx` – Main homepage with a prayer form, Add Prayer functionality, and a list of ongoing prayers.  
-* `prayer-garden/page.tsx` – Displays answered prayers visually as a “garden” where each prayer can be toggled back to ongoing.  
-* `faq/page.tsx` – Frequently Asked Questions page for guidance and app info.  
-* `components/` – Reusable UI components including Header, Footer, PrayerCard, PrayerForm, and PrayerGarden.  
-* `context/PrayerContext.tsx` – Manages global state for prayers, providing functions to add, update, and delete prayers throughout the app.
+├── components/       # Reusable UI components
+│   ├── Header.tsx
+│   ├── Footer.tsx
+│   ├── PrayerForm.tsx
+│   ├── PrayerCard.tsx
+│   └── PrayerGarden.tsx
+├── context/          # Global state management
+│   └── PrayerContext.tsx
+├── faq/              # FAQ page
+│   └── page.tsx
+├── prayer-garden/    # Page displaying answered prayers as a garden
+│   └── page.tsx
+└── page.tsx          # Main homepage with prayer form and ongoing prayers
 
 ---
 
