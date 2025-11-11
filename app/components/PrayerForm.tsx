@@ -11,7 +11,12 @@ interface PrayerFormProps {
   handleCancel: () => void;
 }
 
-export default function PrayerForm({ newPrayer, setNewPrayer, handleAddPrayer, handleCancel }: PrayerFormProps) {
+export default function PrayerForm({
+  newPrayer,
+  setNewPrayer,
+  handleAddPrayer,
+  handleCancel,
+}: PrayerFormProps) {
   const categories = [
     "Health",
     "Family",
@@ -26,24 +31,23 @@ export default function PrayerForm({ newPrayer, setNewPrayer, handleAddPrayer, h
   const canSave = newPrayer.title && newPrayer.category && newPrayer.content;
 
   return (
-    <div className="mt-6 w-full max-w-2xl p-8 pt-10 bg-white shadow rounded-2xl flex flex-col gap-4 relative">
+    <div className="mt-6 w-full max-w-2xl p-8 pt-10 bg-white shadow rounded-2xl flex flex-col gap-4 relative text-gray-800">
       {/* Top-right cancel icon */}
       <X
-        className="absolute top-3 right-3 w-5 h-5 cursor-pointer text-black hover:text-gray-600"
+        className="absolute top-3 right-3 w-5 h-5 cursor-pointer text-gray-800 hover:text-gray-600"
         onClick={handleCancel}
       />
 
       <input
         type="text"
         placeholder="Prayer Title"
-        className="p-3 border rounded"
+        className="p-3 rounded border border-gray-300 bg-white text-gray-800"
         value={newPrayer.title}
         onChange={(e) => setNewPrayer({ ...newPrayer, title: e.target.value })}
       />
 
-      {/* Category Dropdown */}
       <select
-        className="p-3 border rounded"
+        className="p-3 rounded border border-gray-300 bg-white text-gray-800"
         value={newPrayer.category}
         onChange={(e) => setNewPrayer({ ...newPrayer, category: e.target.value })}
       >
@@ -57,20 +61,19 @@ export default function PrayerForm({ newPrayer, setNewPrayer, handleAddPrayer, h
 
       <textarea
         placeholder="Write your prayer here..."
-        className="p-3 border rounded"
+        className="p-3 rounded border border-gray-300 bg-white text-gray-800"
         value={newPrayer.content}
         onChange={(e) => setNewPrayer({ ...newPrayer, content: e.target.value })}
       />
 
-      {/* Bottom-center save text */}
       {canSave && (
         <div className="mt-4 w-full flex justify-center">
-          <span
+          <button
             onClick={handleAddPrayer}
-            className="cursor-pointer font-bold text-black hover:underline px-4 py-1"
+            className="px-8 py-3 bg-pink-600 text-white rounded-xl font-semibold shadow hover:shadow-lg hover:bg-pink-700 transition-all duration-200"
           >
-            [save]
-          </span>
+            Add Prayer to Garden
+          </button>
         </div>
       )}
     </div>

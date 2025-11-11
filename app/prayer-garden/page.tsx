@@ -1,47 +1,40 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import PrayerCard from "../components/PrayerCard";
-import { Prayer } from "../page";
+import { usePrayers } from "../context/PrayerContext";
 
 export default function PrayerGardenPage() {
-  const [prayers, setPrayers] = useState<Prayer[]>([]);
-
-  // Load prayers from localStorage
-  useEffect(() => {
-    const storedPrayers = localStorage.getItem("prayers");
-    if (storedPrayers) {
-      setPrayers(JSON.parse(storedPrayers));
-    }
-  }, []);
+  const { prayers, updatePrayer, deletePrayer } = usePrayers();
+  const answeredPrayers = prayers.filter((p) => p.status === "answered");
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-pink-50 to-green-50 flex flex-col items-center py-10 px-4">
       <Header />
 
-      <h1 className="text-3xl font-bold mb-6">🌸 My Prayer Garden</h1>
+      <h1 className="text-3xl font-bold mb-2 text-center">Prayer Garden</h1>
 
-      {/* Prayer Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-2xl">
-        {prayers.map((p) => (
-          <PrayerCard
-            key={p.id}
-            prayer={p}
-            onDelete={(id) =>
-              setPrayers(prayers.filter((prayer) => prayer.id !== id))
-            }
-            onUpdate={(updatedPrayer) =>
-              setPrayers(
-                prayers.map((prayer) =>
-                  prayer.id === updatedPrayer.id ? updatedPrayer : prayer
-                )
-              )
-            }
-          />
-        ))}
-      </div>
+      <p className="text-gray-700 mb-6 text-center max-w-md">
+        Here are a collection of flowers in your garden — your answered prayers. 
+        You can toggle each flower to mark it back as ongoing if needed.
+      </p>
+
+      {answeredPrayers.length > 0 ? (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-2xl">
+          {answeredPrayers.map((p) => (
+            <PrayerCard
+              key={p.id}
+              prayer={p}
+              onDelete={deletePrayer}
+              onUpdate={updatePrayer}
+            />
+          ))}
+        </div>
+      ) : (
+        <p className="text-gray-500 mt-4">No answered prayers yet. 🌱</p>
+      )}
 
       <Footer prayers={prayers} />
     </main>
